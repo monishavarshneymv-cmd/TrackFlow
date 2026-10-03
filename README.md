@@ -310,22 +310,26 @@ curl -u operator:operator123 -X POST http://localhost:8080/api/deliveries \
 
 ## 10. How to Run & Test
 
-### Run All Tests
+### Run All Backend Tests
 ```bash
 mvn clean test
 ```
 
-### Start the Application
+### Start Backend Application
 ```bash
 mvn spring-boot:run
-```
-
-Or run the packaged JAR directly:
-```bash
+# or
 java -jar target/trackflow-0.0.1-SNAPSHOT.jar
 ```
+The backend starts on `http://localhost:8080`.
 
-The server starts on `http://localhost:8080`.
+### Start Frontend Application
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The frontend dashboard starts on `http://localhost:5173` and automatically proxies `/api` requests to the backend at `http://localhost:8080`.
 
 ---
 
